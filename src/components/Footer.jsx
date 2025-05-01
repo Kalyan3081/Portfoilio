@@ -7,35 +7,27 @@ import { AiOutlineFileText } from "react-icons/ai";
 function Footer() {
   return (
     <div className="flex flex-row justify-center mt-8">
-      
-<div
-  className={`icons gap-4
+
+      <div
+        className={`icons gap-4 mb-5 pb-5
     flex justify-center lg:items-end absolute right-5"}`}
->
-        <a href="./Stakshi_Resume.pdf" 
-          download="Stakshi_Resume.pdf" 
-          className="text-xl text-blue-200 hover:text-blue-400">
-          <AiOutlineFileText />
+      >
+        <a href="/Resume.pdf"
+          download="Resume.pdf">
+          <AiOutlineFileText className="h-8 w-8 sm:h-9 sm:w-9 text-blue-200" />
         </a>
-                
-          <a href="https://github.com/Stakshi301">
-            <AiFillGithub className="text-xl text-blue-200" />
-          </a>
-          <a href="https://www.linkedin.com/in/stakshi-semwal-832226270/">
-            <AiFillLinkedin className="text-xl text-blue-200" />
-          </a>
-          <a href="mailto:semwaleishta6@gmail.com">
-            <AiFillMail className="text-xl text-blue-200" />
-          </a>
-          <a href="https://leetcode.com/u/eishi/">
-            <SiLeetcode className="text-xl text-blue-200" />
-          </a>
-          <a href="https://www.naukri.com/code360/profile/Eishta">
-            <RiCodeSSlashFill className="text-xl text-blue-200" />
-          </a>
-        </div>
-      <p className="text-center m-5 p-5">Made with ❤️ by Stakshi Semwal</p>
-      
+
+        <a href="https://github.com/Kalyan3081">
+          <AiFillGithub className="h-8 w-8 sm:h-9 sm:w-9 text-blue-200" />
+        </a>
+        <a href="https://www.linkedin.com/in/pawan-kalyan-79491b22b/">
+          <AiFillLinkedin className="h-8 w-8 sm:h-9 sm:w-9 text-blue-200" />
+        </a>
+        <a href="mailto:pawan.k30082001@gmail.com">
+          <AiFillMail className="h-8 w-8 sm:h-9 sm:w-9 text-blue-200" />
+        </a>
+      </div>
+
     </div>
   )
 }

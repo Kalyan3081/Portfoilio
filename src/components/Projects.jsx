@@ -1,37 +1,37 @@
 
 import { motion } from "framer-motion";
-import BookStore from "../assets/BookStore.png"
-import veganMart from "../assets/veganMart.png"
+import admindashboard from "../assets/admindashboard.png"
+import swiftsoles from "../assets/swiftsoles.png"
 // import blinkit from "../assets/blinkit.png"
-import DevLTops from "../assets/DevLTops.png"
-import pixo from "../assets/pixo.png"
+import blog from "../assets/blog.png"
+import musicplayer from "../assets/musicplayer.png"
 
 
 const projects = [
   {
-    name: "Pixo",
-    description: "Pixels with Purpose.",
-    image: pixo, 
-    link: "https://pixo-8v7o.onrender.com", 
+    name: "Music Player",
+    description: "Music Player",
+    image: musicplayer,
+    link: "https://musicplayer-rosy-phi.vercel.app/",
   },
   {
-    name: "Book Store",
-    description: "Fuel Your Mind - Get you book from our store.",
-    image: BookStore, 
-    link: "https://bookstorefrontend-f3gf.onrender.com/",
+    name: "Admin Dashboard",
+    description: "Admin Dashboard",
+    image: admindashboard,
+    link: "https://reactvite-admin-dashboard.netlify.app/",
   },
   {
-    name: "Vegan Mart",
-    description: "Eat Clean. Live Green — You're Just One Step Away from Your Order",
-    image: veganMart, 
-    link: "https://stakshi301.github.io/veganMart/", 
+    name: "Swift Soles",
+    description: "swiftsoles",
+    image: swiftsoles,
+    link: "https://swiftsoles.netlify.app/",
   },
-{
-  name:"DevLTops",
-  description: "Stories to Inspire and our Courses to Empower.",
-  image: DevLTops,
-  link: "https://course-website-ashy.vercel.app/",
-}
+  {
+    name: "Blog App - upcoming",
+    description: "Blog App - upcoming",
+    image: blog,
+    link: "https://course-website-ashy.vercel.app/",
+  }
 ];
 
 const Projects = () => {

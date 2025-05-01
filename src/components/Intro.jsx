@@ -8,7 +8,7 @@ import { DiMongodb } from "react-icons/di";
 import { SiExpress } from "react-icons/si";
 import { GrReactjs } from "react-icons/gr";
 import { FaNodeJs } from "react-icons/fa";
-import stakshi from "../assets/stakshi.jpg";
+import Profil from "../assets/profil.png";
 import AboutDrawer from "./AboutDrawer";
 import ScrollIndicator from "./ScrollIndicator";
 import Projects from "./Projects";
@@ -16,7 +16,7 @@ import '../index.css'
 
 
 const Intro = () => {
-  
+
   const projectsRef = useRef(null);
 
   const handleScrollDown = () => {
@@ -31,89 +31,79 @@ const Intro = () => {
 
   return (
     <>
-     <div
-  className={`introContainer container mx-auto flex flex-col lg:flex-row mt-5 gap-8 ${
-    isDrawerOpen ? "lg:flex" : "flex"
-  }`}
->
-     
-      <div className="Name flex flex-col items-center text-center mt-6 lg:mt-32">
-  <h1 className="text-3xl sm:text-4xl lg:text-6xl text-blue-200">
-    Stakshi Semwal
-  </h1>
-  <button
-    className="aboutMe w-28 bg-blue-400 mt-4 p-2 text-sm sm:text-base rounded-md bg-gradient-to-r from-blue-300 to-blue-600 hover:from-blue-600 hover:to-blue-300 mx-4"
-    onClick={handleOpenDrawer}
-  >
-    About Me
-  </button>
-</div>
+      <div
+        className={`introContainer container mx-auto flex flex-col lg:flex-row mt-5 gap-8 ${isDrawerOpen ? "lg:flex" : "flex"
+          }`}>
+
+        <div className="Name flex flex-col items-center text-center mt-6 lg:mt-32">
+          <h1 className="text-3xl sm:text-4xl lg:text-6xl text-blue-200">Pawan Kalyan</h1>
+          <button
+            className="aboutMe w-28 bg-blue-400 mt-4 p-2 text-sm sm:text-base rounded-md bg-gradient-to-r from-blue-300 to-blue-600 hover:from-blue-600 hover:to-blue-300 mx-4"
+            onClick={handleOpenDrawer}
+          >
+            About Me
+          </button>
+        </div>
 
 
-<div className="imageContainer relative flex justify-center items-center md:ml-0 pb-28 lg:ml-[45px] mt-[25px]">
-  <div className="relative">
-    <img
-      src={stakshi}
-      className=" image h-64 w-64 rounded-full object-cover object-top"
-    />
-    <div className="absolute inset-0 bg-black opacity-50 rounded-full"></div>
-  </div>
-</div>
+        <div className="imageContainer relative flex justify-center items-center md:ml-0 pb-28 lg:ml-[45px] mt-[25px]">
+          <div className="relative">
+            <img
+              src={Profil}
+              className=" image h-64 w-64 rounded-full object-cover object-top"
+            />
+            <div className="absolute inset-0 bg-black opacity-50 rounded-full"></div>
+          </div>
+        </div>
 
 
 
 
-<div
-  className={`icons  
+        <div
+          className={`icons  
     flex justify-center gap-6 
     md:flex md:justify-center 
     ${isDrawerOpen ? "hidden lg:!hidden" : "lg:flex lg:flex-col lg:gap-12 lg:justify-end lg:items-end lg:absolute lg:right-5"}`}
->
+        >
 
-         <a href="/Stakshi_Resume.pdf" 
-          download="Stakshi_Resume.pdf">
-          <AiOutlineFileText className="h-8 w-8 sm:h-9 sm:w-9 text-blue-200"/>
-        </a>
+          <a href="/Resume.pdf"
+            download="Resume.pdf">
+            <AiOutlineFileText className="h-8 w-8 sm:h-9 sm:w-9 text-blue-200" />
+          </a>
 
-          <a href="https://github.com/Stakshi301">
+          <a href="https://github.com/Kalyan3081">
             <AiFillGithub className="h-8 w-8 sm:h-9 sm:w-9 text-blue-200" />
           </a>
-          <a href="https://www.linkedin.com/in/stakshi-semwal-832226270/">
+          <a href="https://www.linkedin.com/in/pawan-kalyan-79491b22b/">
             <AiFillLinkedin className="h-8 w-8 sm:h-9 sm:w-9 text-blue-200" />
           </a>
-          <a href="mailto:semwaleishta6@gmail.com">
+          <a href="mailto:pawan.k30082001@gmail.com">
             <AiFillMail className="h-8 w-8 sm:h-9 sm:w-9 text-blue-200" />
           </a>
-          <a href="https://leetcode.com/u/eishi/">
-            <SiLeetcode className="h-8 w-8 sm:h-9 sm:w-9 text-blue-200" />
-          </a>
-          <a href="https://www.naukri.com/code360/profile/Eishta">
-            <RiCodeSSlashFill className="h-8 w-8 sm:h-9 sm:w-9 text-blue-200" />
-          </a>
+
         </div>
       </div>
 
 
+      <div className="flex justify-center mt-10">
+        <ScrollIndicator onClick={handleScrollDown} />
+      </div>
 
-<div className="flex justify-center mt-10">
-          <ScrollIndicator onClick={handleScrollDown} />
-        </div>
-     
 
       {/* Target Section to Scroll Down To */}
       <div ref={projectsRef}>
         <Projects />
       </div>
-{/* <ScrollIndicator/> */}
+      {/* <ScrollIndicator/> */}
 
-     
-      <AboutDrawer isOpen={isDrawerOpen} onClose={handleCloseDrawer}   className={`${isDrawerOpen ? "md:mt-20" : ""}`}
+
+      <AboutDrawer isOpen={isDrawerOpen} onClose={handleCloseDrawer} className={`${isDrawerOpen ? "md:mt-20" : ""}`}
       >
         <h3 className="text-center text-teal-500 text-2xl sm:text-3xl lg:text-4xl">
           About Me
         </h3>
         <p className="mt-4 lg:text-gray-500 text-sm sm:text-base md:text-gray-400  text-justify">
-          Hello! My name is Stakshi Semwal. I am a passionate web developer. I
+          Hello! My name is Pawan Kalyan. I am a passionate web developer. I
           enjoy building interactive, user-friendly, and responsive web
           applications. Technologies and tools that I use to create such
           awesome websites.
@@ -165,8 +155,6 @@ const Intro = () => {
           </div>
         </div>
       </AboutDrawer>
-    
-
     </>
   );
 };

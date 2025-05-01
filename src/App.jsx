@@ -1,4 +1,3 @@
-import Certificate from "./components/certificates";
 import Navbar from "./components/Navbar";
 import ContactMe from "./components/ContactMe";
 import Footer from "./components/Footer";
@@ -13,11 +12,11 @@ function App() {
 
       <div className="container mx-auto w-full px-5">
         <Navbar />
-        <Intro/>
-        <Certificate />
-        <ContactMe/>
-        <Footer/>
-        
+        <Intro />
+
+        <ContactMe />
+        <Footer />
+
       </div>
     </div>
   );
