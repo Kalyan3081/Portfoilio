@@ -31,56 +31,40 @@ const Intro = () => {
 
   return (
     <>
-      <div
-        className={`introContainer container mx-auto flex flex-col lg:flex-row mt-5 gap-8 ${isDrawerOpen ? "lg:flex" : "flex"
-          }`}>
-
-        <div className="Name flex flex-col items-center text-center mt-6 lg:mt-32">
+      <div className="introContainer container mx-auto flex flex-col lg:flex-row items-center justify-center  relative p-5" >
+        {/* Centered Name and Image */}
+        <div className="flex flex-col items-center text-center">
           <h1 className="text-3xl sm:text-4xl lg:text-6xl text-blue-200">Pawan Kalyan</h1>
+          <div className="imageContainer relative mt-4">
+            <img
+              src={Profil}
+              alt="Profile"
+              className="h-64 w-64 rounded-full object-cover object-top"
+            />
+            <div className="absolute inset-0 bg-black opacity-50 rounded-full"></div>
+          </div>
           <button
-            className="aboutMe w-28 bg-blue-400 mt-4 p-2 text-sm sm:text-base rounded-md bg-gradient-to-r from-blue-300 to-blue-600 hover:from-blue-600 hover:to-blue-300 mx-4"
+            className="aboutMe w-28 bg-blue-400 mt-4 p-2 text-sm sm:text-base rounded-md bg-gradient-to-r from-blue-300 to-blue-600 hover:from-blue-600 hover:to-blue-300"
             onClick={handleOpenDrawer}
           >
             About Me
           </button>
         </div>
 
-
-        <div className="imageContainer relative flex justify-center items-center md:ml-0 pb-28 lg:ml-[45px] mt-[25px]">
-          <div className="relative">
-            <img
-              src={Profil}
-              className=" image h-64 w-64 rounded-full object-cover object-top"
-            />
-            <div className="absolute inset-0 bg-black opacity-50 rounded-full"></div>
-          </div>
-        </div>
-
-
-
-
-        <div
-          className={`icons  
-    flex justify-center gap-6 
-    md:flex md:justify-center 
-    ${isDrawerOpen ? "hidden lg:!hidden" : "lg:flex lg:flex-col lg:gap-12 lg:justify-end lg:items-end lg:absolute lg:right-5"}`}
-        >
-
-          <a href="/Resume.pdf"
-            download="Resume.pdf">
-            <AiOutlineFileText className="h-8 w-8 sm:h-9 sm:w-9 text-blue-200" />
+        {/* Right Side Icons */}
+        <div className="hidden lg:flex flex-col items-center gap-6 absolute right-10 top-1/2 transform -translate-y-1/2">
+          <a href="/Resume.pdf" download="Resume.pdf">
+            <AiOutlineFileText className="h-8 w-8 text-blue-200" />
           </a>
-
           <a href="https://github.com/Kalyan3081">
-            <AiFillGithub className="h-8 w-8 sm:h-9 sm:w-9 text-blue-200" />
+            <AiFillGithub className="h-8 w-8 text-blue-200" />
           </a>
           <a href="https://www.linkedin.com/in/pawan-kalyan-79491b22b/">
-            <AiFillLinkedin className="h-8 w-8 sm:h-9 sm:w-9 text-blue-200" />
+            <AiFillLinkedin className="h-8 w-8 text-blue-200" />
           </a>
           <a href="mailto:pawan.k30082001@gmail.com">
-            <AiFillMail className="h-8 w-8 sm:h-9 sm:w-9 text-blue-200" />
+            <AiFillMail className="h-8 w-8 text-blue-200" />
           </a>
-
         </div>
       </div>
 

@@ -14,15 +14,15 @@ function ContactMe() {
     e.preventDefault();
 
     emailjs.sendForm(
-      "service_ocyzb5s",   
-      "template_2cqqpqh",  
+      "service_ocyzb5s",
+      "template_2cqqpqh",
       form.current,
-      "4iVybjWHDe4yVjy8E"    
+      "4iVybjWHDe4yVjy8E"
     ).then(
       (result) => {
         console.log("Success:", result.text);
-        setIsSent(true);  
-        e.target.reset();  
+        setIsSent(true);
+        e.target.reset();
       },
       (error) => {
         console.log("Error:", error.text);
@@ -32,26 +32,26 @@ function ContactMe() {
 
   return (
     <div className="container mx-auto max-w-4xl p-6">
-<div className="flex justify-center items-center">
-      <motion.h1
-        initial={{ x: -100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 5.1, ease: "easeInOut" ,repeat: Infinity, repeatDelay: 2}}
-        className="text-3xl font-bold text-blue-400"
-      >
-        Let's
-      </motion.h1>
-      <motion.h1
-        initial={{ x: 100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 5.1, ease: "easeInOut" ,repeat: Infinity, repeatDelay: 2}}
-        className="text-3xl font-bold text-blue-400 ml-2"
-      >
-        Connect
-      </motion.h1>
-    </div>
+      <div className="flex justify-center items-center">
+        <motion.h1
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 5.1, ease: "easeInOut", repeat: Infinity, repeatDelay: 2 }}
+          className="text-3xl font-bold text-blue-400"
+        >
+          Let's
+        </motion.h1>
+        <motion.h1
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 5.1, ease: "easeInOut", repeat: Infinity, repeatDelay: 2 }}
+          className="text-3xl font-bold text-blue-400 ml-2"
+        >
+          Connect
+        </motion.h1>
+      </div>
       <div className="text-white rounded-lg shadow-lg flex flex-col lg:flex-row items-center gap-8 p-6">
-        
+
         {/* Left Side Image */}
         <div className="flex-1 flex justify-center">
           <img src={connect} alt="Contact Me" className="w-full max-w-sm" />
@@ -60,7 +60,7 @@ function ContactMe() {
         {/* Right Side Contact Form */}
         <div className="flex-1">
           <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-4">
-            
+
             <div className="flex flex-col">
               <label htmlFor="name" className="flex items-center gap-2 text-lg">
                 <BsPerson /> Name
@@ -83,11 +83,10 @@ function ContactMe() {
             </div>
 
             {/* ✅ Button Changes After Submission */}
-            <button 
-              type="submit" 
-              className={`mt-4 p-2 text-lg font-semibold rounded-md transition-all ${
-                isSent ? "bg-green-500 text-white" : "bg-blue-500 hover:bg-blue-600"
-              }`}
+            <button
+              type="submit"
+              className={`mt-4 p-2 text-lg font-semibold rounded-md transition-all ${isSent ? "bg-green-500 text-white" : "bg-blue-500 hover:bg-blue-600"
+                }`}
             >
               {isSent ? "Done ✅" : "Send Message"}
             </button>
