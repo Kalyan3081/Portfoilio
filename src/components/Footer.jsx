@@ -12,8 +12,7 @@ function Footer() {
         className={`icons gap-4 mb-5 pb-5
     flex justify-center lg:items-end absolute right-5"}`}
       >
-        <a href="/Resume.pdf"
-          download="Resume.pdf">
+        <a href="/Pawan Kalyan.pdf" download="Pawan Kalyan.pdf">
           <AiOutlineFileText className="h-8 w-8 sm:h-9 sm:w-9 text-blue-200" />
         </a>
 

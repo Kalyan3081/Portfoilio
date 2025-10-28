@@ -3,11 +3,17 @@ import { motion } from "framer-motion";
 import admindashboard from "../assets/admindashboard.png"
 import swiftsoles from "../assets/swiftsoles.png"
 // import blinkit from "../assets/blinkit.png"
-import blog from "../assets/blog.png"
+import shop from "../assets/shop.png"
 import musicplayer from "../assets/musicplayer.png"
 
 
 const projects = [
+  {
+    name: "Online Ordering Platform",
+    description: "Full stack project",
+    image: shop,
+    link: "https://shop-three-sable.vercel.app/",
+  },
   {
     name: "Music Player",
     description: "Music Player",
@@ -25,13 +31,8 @@ const projects = [
     description: "swiftsoles",
     image: swiftsoles,
     link: "https://swiftsoles.netlify.app/",
-  },
-  {
-    name: "Blog App - upcoming",
-    description: "Blog App - upcoming",
-    image: blog,
-    link: "https://course-website-ashy.vercel.app/",
   }
+
 ];
 
 const Projects = () => {

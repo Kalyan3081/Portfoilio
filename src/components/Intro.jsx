@@ -53,7 +53,7 @@ const Intro = () => {
 
         {/* Right Side Icons */}
         <div className="hidden lg:flex flex-col items-center gap-6 absolute right-10 top-1/2 transform -translate-y-1/2">
-          <a href="/Resume.pdf" download="Resume.pdf">
+          <a href="/Pawan Kalyan.pdf" download="Pawan Kalyan.pdf">
             <AiOutlineFileText className="h-8 w-8 text-blue-200" />
           </a>
           <a href="https://github.com/Kalyan3081">
@@ -100,6 +100,7 @@ const Intro = () => {
             "#bootstrap",
             "#javascript",
             "#react.js",
+            "#Next.js",
             "#redux",
             "#node.js",
             "#mongoDB",
