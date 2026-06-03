@@ -113,8 +113,7 @@ const Intro = () => {
             transition={{ duration: 1 }}
             className="relative flex justify-center lg:justify-end lg:w-1/2"
           >
-            {/* Image Container - Increased mobile width (280px) to prevent overlapping */}
-            <div className="relative w-[280px] sm:w-[450px] lg:w-[600px] flex items-center justify-center">
+            <div className="relative w-[220px] sm:w-[450px] lg:w-[600px] flex items-center justify-center">
 
               {/* --- LEFT BRACKET ( --- */}
 
@@ -122,8 +121,7 @@ const Intro = () => {
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-                // Position: Tucked in horizontally (left-4), down from top (20%)
-                className="absolute left-4 sm:left-10 top-[20%] z-20 bg-slate-900/90 p-2 sm:p-3 lg:p-4 rounded-xl sm:rounded-2xl border border-green-900 shadow-lg shadow-green-500/20"
+                className="hidden sm:block absolute sm:left-10 top-[20%] z-20 bg-slate-900/90 p-2 sm:p-3 lg:p-4 rounded-xl sm:rounded-2xl border border-green-900 shadow-lg shadow-green-500/20"
               >
                 <DiMongodb className="text-2xl sm:text-4xl lg:text-6xl text-green-500" />
               </motion.div>
@@ -132,8 +130,7 @@ const Intro = () => {
               <motion.div
                 animate={{ y: [0, -12, 0] }}
                 transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 0.5 }}
-                // Position: Pushed OUT (-left-4/12), Centered vertically
-                className="absolute -left-4 sm:-left-12 top-1/2 -translate-y-1/2 z-20 bg-slate-900/90 p-2 sm:p-3 lg:p-4 rounded-xl sm:rounded-2xl border border-slate-700 shadow-lg shadow-white/10"
+                className="hidden sm:block absolute sm:-left-12 top-1/2 -translate-y-1/2 z-20 bg-slate-900/90 p-2 sm:p-3 lg:p-4 rounded-xl sm:rounded-2xl border border-slate-700 shadow-lg shadow-white/10"
               >
                 <SiExpress className="text-2xl sm:text-4xl lg:text-6xl text-white" />
               </motion.div>
@@ -142,8 +139,7 @@ const Intro = () => {
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
-                // Position: Tucked in horizontally (left-4), up from bottom (20%)
-                className="absolute left-4 sm:left-10 bottom-[20%] z-20 bg-slate-900/90 p-2 sm:p-3 lg:p-4 rounded-xl sm:rounded-2xl border border-blue-900 shadow-lg shadow-blue-500/20"
+                className="hidden sm:block absolute sm:left-10 bottom-[20%] z-20 bg-slate-900/90 p-2 sm:p-3 lg:p-4 rounded-xl sm:rounded-2xl border border-blue-900 shadow-lg shadow-blue-500/20"
               >
                 <FaReact className="text-2xl sm:text-4xl lg:text-6xl text-blue-400" />
               </motion.div>
@@ -164,8 +160,7 @@ const Intro = () => {
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
-                // Position: Tucked in horizontally (right-4), down from top (20%)
-                className="absolute right-4 sm:right-10 top-[20%] z-20 bg-black/90 p-2 sm:p-3 lg:p-4 rounded-xl sm:rounded-2xl border border-slate-700 shadow-lg shadow-white/10"
+                className="hidden sm:block absolute sm:right-10 top-[20%] z-20 bg-black/90 p-2 sm:p-3 lg:p-4 rounded-xl sm:rounded-2xl border border-slate-700 shadow-lg shadow-white/10"
               >
                 <SiNextdotjs className="text-2xl sm:text-4xl lg:text-6xl text-white" />
               </motion.div>
@@ -174,8 +169,7 @@ const Intro = () => {
               <motion.div
                 animate={{ y: [0, -12, 0] }}
                 transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 0.2 }}
-                // Position: Pushed OUT (-right-4/12), Centered vertically
-                className="absolute -right-4 sm:-right-12 top-1/2 -translate-y-1/2 z-20 bg-slate-900/90 p-2 sm:p-3 lg:p-4 rounded-xl sm:rounded-2xl border border-green-900 shadow-lg shadow-green-500/20"
+                className="hidden sm:block absolute sm:-right-12 top-1/2 -translate-y-1/2 z-20 bg-slate-900/90 p-2 sm:p-3 lg:p-4 rounded-xl sm:rounded-2xl border border-green-900 shadow-lg shadow-green-500/20"
               >
                 <FaNodeJs className="text-2xl sm:text-4xl lg:text-6xl text-green-500" />
               </motion.div>
@@ -184,8 +178,7 @@ const Intro = () => {
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut", delay: 0.8 }}
-                // Position: Tucked in horizontally (right-4), up from bottom (20%)
-                className="absolute right-4 sm:right-10 bottom-[20%] z-20 bg-slate-900/90 p-2 sm:p-3 lg:p-4 rounded-xl sm:rounded-2xl border border-yellow-900 shadow-lg shadow-yellow-500/20"
+                className="hidden sm:block absolute sm:right-10 bottom-[20%] z-20 bg-slate-900/90 p-2 sm:p-3 lg:p-4 rounded-xl sm:rounded-2xl border border-yellow-900 shadow-lg shadow-yellow-500/20"
               >
                 <SiJavascript className="text-2xl sm:text-4xl lg:text-6xl text-yellow-400" />
               </motion.div>
@@ -195,7 +188,7 @@ const Intro = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-10 w-full flex justify-center animate-bounce z-20 hidden lg:flex">
+        <div className="absolute bottom-10 w-full hidden lg:flex justify-center animate-bounce z-20">
           <ScrollIndicator onClick={handleScrollDown} />
         </div>
       </div>

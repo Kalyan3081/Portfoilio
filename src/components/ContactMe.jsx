@@ -83,6 +83,7 @@ function ContactMe() {
                 <BsPerson className="text-blue-400" /> Your Name
               </label>
               <input
+                id="name"
                 type="text"
                 name="user_name"
                 required
@@ -96,6 +97,7 @@ function ContactMe() {
                 <HiOutlineMail className="text-blue-400" /> Your Email
               </label>
               <input
+                id="email"
                 type="email"
                 name="user_email"
                 required
@@ -109,6 +111,7 @@ function ContactMe() {
                 <BiMessageSquareDetail className="text-blue-400" /> Message
               </label>
               <textarea
+                id="message"
                 name="message"
                 rows="4"
                 required
