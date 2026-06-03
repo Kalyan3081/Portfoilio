@@ -1,72 +1,178 @@
-
+import React from "react";
 import { motion } from "framer-motion";
-import admindashboard from "../assets/admindashboard.png"
-import swiftsoles from "../assets/swiftsoles.png"
-// import blinkit from "../assets/blinkit.png"
-import shop from "../assets/shop.png"
-import musicplayer from "../assets/musicplayer.png"
-
+import { FaExternalLinkAlt, FaShieldAlt } from "react-icons/fa";
+import ballarikhara from "../assets/ballarikhara.png";
+import medvoro from "../assets/medvoro.png";
 
 const projects = [
   {
-    name: "Online Ordering Platform",
-    description: "Full stack project",
-    image: shop,
-    link: "https://shop-three-sable.vercel.app/",
+    name: "Ballari Khara",
+    category: "Sweets & Food Ordering Platform",
+    description:
+      "Full-stack platform for Pawan Sweets, Ballari. Features a product catalog (Sweets, Khara, Dry Fruits), same-day delivery, offers & rewards, and a complete admin dashboard with analytics.",
+    image: ballarikhara,
+    link: "https://ballarikhara.in/",
+    tech: ["React", "Node.js", "MongoDB", "Express"],
+    status: "live",
   },
   {
-    name: "Music Player",
-    description: "Music Player",
-    image: musicplayer,
-    link: "https://musicplayer-rosy-phi.vercel.app/",
+    name: "MedVoro Health",
+    category: "Health & Wellness Blog",
+    description:
+      "SEO-optimised health blog built with Next.js and Sanity CMS. Features category-filtered articles, email newsletter via Brevo, trending posts sidebar, and a fully managed content pipeline.",
+    image: medvoro,
+    link: "https://medvorohealth.com/",
+    tech: ["Next.js", "Sanity CMS", "Brevo", "Tailwind CSS"],
+    status: "live",
   },
   {
-    name: "Admin Dashboard",
-    description: "Admin Dashboard",
-    image: admindashboard,
-    link: "https://reactvite-admin-dashboard.netlify.app/",
+    name: "MIG Security",
+    category: "Mobile Security App",
+    description:
+      "A cross-platform security management app. Covers visitor management, vehicle in/out tracking, SOS emergency alerts, and a full admin control panel.",
+    image: null,
+    link: null,
+    tech: ["React Native", "Node.js", "MongoDB", "Express"],
+    status: "development",
   },
-  {
-    name: "Swift Soles",
-    description: "swiftsoles",
-    image: swiftsoles,
-    link: "https://swiftsoles.netlify.app/",
-  }
-
 ];
+
+const StatusBadge = ({ status }) =>
+  status === "live" ? (
+    <span className="flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-green-500/20 text-green-400 border border-green-500/30 backdrop-blur-sm">
+      <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+      Live
+    </span>
+  ) : (
+    <span className="flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-400 border border-amber-500/30 backdrop-blur-sm">
+      <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+      In Development
+    </span>
+  );
 
 const Projects = () => {
   return (
-    <div className="container mx-auto py-10 mt-5">
-      <h2 className="text-3xl sm:text-4xl text-center text-blue-300 font-bold mb-10">
-        My Work
-      </h2>
+    <div className="container mx-auto py-20 px-4" id="projects">
 
-      <div className="grid gap-8 sm:grid-cols-2">
+      {/* Section Header */}
+      <div className="text-center mb-16">
+        <motion.p
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3"
+        >
+          Selected Work
+        </motion.p>
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="text-4xl sm:text-5xl font-bold text-white mb-4"
+        >
+          Projects I've Built
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="text-slate-400 max-w-lg mx-auto text-sm sm:text-base"
+        >
+          Real-world freelance projects — from food ordering platforms to health portals and mobile security apps.
+        </motion.p>
+      </div>
+
+      {/* Cards Grid */}
+      <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="relative rounded-lg overflow-hidden shadow-lg cursor-pointer group"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -6 }}
+            transition={{ duration: 0.4, delay: index * 0.1 }}
+            className="group relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 shadow-xl shadow-black/30 flex flex-col"
           >
-            <img
-              src={project.image}
-              alt={project.name}
-              className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 className="text-2xl font-bold">{project.name}</h3>
-              <p className="text-sm mt-2">{project.description}</p>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded-md transition-all"
-              >
-                View Project
-              </a>
+            {/* Top: Image or Gradient */}
+            <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden shrink-0">
+              {project.image ? (
+                <>
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:blur-[2px]"
+                  />
+                  {/* Hover overlay — desktop */}
+                  <div className="absolute inset-0 bg-slate-950/88 flex flex-col justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-5 text-center">
+                    <p className="text-slate-300 text-sm leading-relaxed mb-5">
+                      {project.description}
+                    </p>
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-full text-sm font-semibold transition-all hover:scale-105 shadow-lg"
+                    >
+                      Visit Site <FaExternalLinkAlt size={11} />
+                    </a>
+                  </div>
+                </>
+              ) : (
+                /* MIG Security — no screenshot yet */
+                <div className="w-full h-full bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-950 flex flex-col items-center justify-center gap-3 p-6">
+                  <div className="p-4 rounded-2xl bg-blue-500/10 border border-blue-500/20">
+                    <FaShieldAlt className="text-5xl text-blue-400" />
+                  </div>
+                  <p className="text-slate-400 text-xs text-center leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
+              )}
+
+              {/* Status badge — top right */}
+              <div className="absolute top-3 right-3 z-10">
+                <StatusBadge status={project.status} />
+              </div>
             </div>
+
+            {/* Bottom: Info */}
+            <div className="p-5 flex flex-col gap-3 flex-1">
+              <div className="flex items-start justify-between gap-2">
+                <div>
+                  <h3 className="text-white font-bold text-lg leading-tight">
+                    {project.name}
+                  </h3>
+                  <p className="text-slate-400 text-xs mt-0.5">{project.category}</p>
+                </div>
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-500 hover:text-blue-400 transition-colors mt-1 shrink-0"
+                    aria-label={`Visit ${project.name}`}
+                  >
+                    <FaExternalLinkAlt size={14} />
+                  </a>
+                )}
+              </div>
+
+              {/* Tech tags */}
+              <div className="flex flex-wrap gap-1.5 mt-auto">
+                {project.tech.map((t, i) => (
+                  <span
+                    key={i}
+                    className="px-2.5 py-0.5 rounded-md text-xs bg-slate-800 text-slate-300 border border-slate-700/60"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+
           </motion.div>
         ))}
       </div>
@@ -74,5 +180,4 @@ const Projects = () => {
   );
 };
 
-
-export default Projects
+export default Projects;

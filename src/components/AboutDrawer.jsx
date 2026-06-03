@@ -1,40 +1,50 @@
 import PropTypes from "prop-types";
-import "../index.css"
+import { useEffect } from "react";
+import { IoClose } from "react-icons/io5";
 
 const AboutDrawer = ({ isOpen, onClose, children }) => {
+  // Prevent body scroll when drawer is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isOpen]);
+
   return (
     <>
+      {/* Backdrop */}
+      <div
+        className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
+        onClick={onClose}
+        aria-hidden="true"
+      />
 
-      {isOpen && (
-<div className="Container lg:fixed inset-0 bg-black bg-opacity-50 z-40" onClick={onClose} aria-hidden="true"></div>
-      )}
+      {/* Drawer */}
+      <div
+        className={`fixed top-0 right-0 h-full w-full sm:w-[450px] bg-slate-900 border-l border-slate-800 shadow-2xl z-50 transform transition-transform duration-500 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+      >
+        <button
+          className="absolute top-4 right-4 p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-full transition-colors"
+          onClick={onClose}
+          aria-label="Close Drawer"
+        >
+          <IoClose size={24} />
+        </button>
 
-<div className={`drawerContainer fixed top-0 right-0 w-full sm:w-96 lg:top-14 lg:right-0 lg:text-center lg:pl-0 lg:pr-0 lg:w-1/3 md:top-16 md:right-0 md:w-full md:pl-36 md:pr-36 h-full shadow-lg transition-transform transform ${
- isOpen ? "translate-x-0" : "translate-x-full" } z-50 duration-500 linear`} aria-hidden={!isOpen}>
-
-  <button className="absolute top-8 right-4 text-gray-500 hover:text-blue-400 lg:pr-0 md:pr-36"
-  onClick={onClose} aria-label="Close Drawer"> ✕</button>
-
-        <div className="p-6">{children}</div>
+        <div className="h-full overflow-y-auto p-8 custom-scrollbar">
+          {children}
+        </div>
       </div>
-
     </>
   );
 };
 
-
-// className={`fixed top-0 right-0 h-full shadow-lg transition-transform transform 
-//   ${isOpen ? "translate-x-0" : "translate-x-full"} 
-//   w-full sm:w-96 md:w-full lg:w-1/3 md:top-16 lg:top-14 z-50 duration-500 linear`}
-// aria-hidden={!isOpen}
-// >
-
-
-// Add prop validation
 AboutDrawer.propTypes = {
-  isOpen: PropTypes.bool.isRequired, // isOpen must be a boolean and is required
-  onClose: PropTypes.func.isRequired, // onClose must be a function and is required
-  children: PropTypes.node.isRequired, // children must be React nodes and is required
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default AboutDrawer;

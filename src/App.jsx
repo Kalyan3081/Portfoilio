@@ -11,7 +11,7 @@ function App() {
       </div>
 
       <div className="container mx-auto w-full px-5">
-        <Navbar />
+        {/* <Navbar /> */}
         <Intro />
 
         <ContactMe />

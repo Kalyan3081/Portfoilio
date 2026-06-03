@@ -1,35 +1,34 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 
 function Navbar() {
-  useEffect(() => {
-    const options = {
-      strings: [
-        "MERN-stack Developer",
-        "Frontend Web Developer",
-        "Web Developer",
-        "Person with Creative Vision",
-      ],
-      typeSpeed: 100,
-      backSpeed: 60,
-      loop: true,
-    };
+  const el = useRef(null);
 
-    const typed1 = new Typed(".typing", options);
+  useEffect(() => {
+    const typed = new Typed(el.current, {
+      strings: [
+        "Freelance Developer",
+        "MERN Stack Developer",
+        "Web &amp; App Developer",
+        "Problem Solver",
+      ],
+      typeSpeed: 50,
+      backSpeed: 40,
+      backDelay: 1500,
+      loop: true,
+    });
 
     return () => {
-      typed1.destroy();
+      typed.destroy();
     };
   }, []);
 
   return (
-    <>
-      <nav className="text-center pt-2 text-3xl text-white w-full">
-        <div className="text-center lg:text-6xl sm:text-4xl md:text-5xl  bg-gradient-to-r from-teal-400 to-blue-500 hover:from-blue-500 hover:to-teal-400 bg-clip-text tracking-tight text-transparent">
-          A <span className="typing text-center   sm:text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-teal-400 to-blue-500 hover:from-blue-500 hover:to-teal-400 bg-clip-text tracking-tight text-transparent"></span>
-        </div>
-      </nav>
-    </>
+    <div className="h-10 sm:h-12 flex items-center justify-center lg:justify-start">
+      <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-slate-400">
+        I am a <span ref={el} className="text-blue-400"></span>
+      </h2>
+    </div>
   );
 }
 
