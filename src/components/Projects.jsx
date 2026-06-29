@@ -26,14 +26,14 @@ const projects = [
     status: "live",
   },
   {
-    name: "MIG Security",
-    category: "Mobile Security App",
+    name: "MIG Security — VMS Portal",
+    category: "Enterprise Security Management Platform",
     description:
-      "A cross-platform security management app. Covers visitor management, vehicle in/out tracking, SOS emergency alerts, and a full admin control panel.",
+      "Full-stack security platform for industrial sites. 3-role mobile app (guard, client, dept), visitor & vehicle management, QR patrol, SOS alerts, attendance & payroll, real-time Socket.IO sync. Live on Google Play Store.",
     image: null,
-    link: null,
-    tech: ["React Native", "Node.js", "MongoDB", "Express"],
-    status: "development",
+    link: "https://migsecure.in",
+    tech: ["React Native", "Expo", "Node.js", "MongoDB", "Next.js", "Socket.IO"],
+    status: "live",
   },
 ];
 
@@ -121,14 +121,24 @@ const Projects = () => {
                   </div>
                 </>
               ) : (
-                /* MIG Security — no screenshot yet */
-                <div className="w-full h-full bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-950 flex flex-col items-center justify-center gap-3 p-6">
+                /* No screenshot — gradient placeholder */
+                <div className="w-full h-full bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-950 flex flex-col items-center justify-center gap-3 p-6 group">
                   <div className="p-4 rounded-2xl bg-blue-500/10 border border-blue-500/20">
                     <FaShieldAlt className="text-5xl text-blue-400" />
                   </div>
                   <p className="text-slate-400 text-xs text-center leading-relaxed">
                     {project.description}
                   </p>
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-full text-sm font-semibold transition-all hover:scale-105 shadow-lg mt-1"
+                    >
+                      Visit Site <FaExternalLinkAlt size={11} />
+                    </a>
+                  )}
                 </div>
               )}
 
