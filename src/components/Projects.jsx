@@ -121,24 +121,27 @@ const Projects = () => {
                   </div>
                 </>
               ) : (
-                /* No screenshot — gradient placeholder */
-                <div className="w-full h-full bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-950 flex flex-col items-center justify-center gap-3 p-6 group">
+                /* No screenshot — gradient placeholder with hover overlay */
+                <div className="w-full h-full bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-950 relative flex flex-col items-center justify-center gap-3 p-6">
                   <div className="p-4 rounded-2xl bg-blue-500/10 border border-blue-500/20">
                     <FaShieldAlt className="text-5xl text-blue-400" />
                   </div>
-                  <p className="text-slate-400 text-xs text-center leading-relaxed">
-                    {project.description}
-                  </p>
-                  {project.link && (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-full text-sm font-semibold transition-all hover:scale-105 shadow-lg mt-1"
-                    >
-                      Visit Site <FaExternalLinkAlt size={11} />
-                    </a>
-                  )}
+                  {/* Hover overlay — same as image cards */}
+                  <div className="absolute inset-0 bg-slate-950/88 flex flex-col justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-5 text-center">
+                    <p className="text-slate-300 text-sm leading-relaxed mb-5">
+                      {project.description}
+                    </p>
+                    {project.link && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-full text-sm font-semibold transition-all hover:scale-105 shadow-lg"
+                      >
+                        Visit Site <FaExternalLinkAlt size={11} />
+                      </a>
+                    )}
+                  </div>
                 </div>
               )}
 
