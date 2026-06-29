@@ -32,7 +32,7 @@ const Intro = () => {
 
   return (
     <>
-      <div className="relative min-h-screen flex flex-col items-center justify-center bg-slate-950 bg-grid-white overflow-hidden">
+      <div className="relative min-h-screen flex flex-col items-center justify-start lg:justify-center bg-slate-950 bg-grid-white overflow-hidden">
 
         {/* Background Ambient Glow */}
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-slate-950 [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]"></div>
