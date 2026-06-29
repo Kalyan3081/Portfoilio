@@ -33,6 +33,7 @@ const projects = [
     description:
       "Full-stack security platform for industrial sites. 3-role mobile app (guard, client, dept), visitor & vehicle management, QR patrol, SOS alerts, attendance & payroll, real-time Socket.IO sync. Live on Google Play Store.",
     image: "/logo.jpeg",
+    imageContain: true,
     link: "https://migsecure.in",
     tech: ["React Native", "Expo", "Node.js", "MongoDB", "Next.js", "Socket.IO"],
     features: ["Visitor & vehicle management with approvals", "QR patrol + SOS emergency alerts", "Attendance, payroll & admin web panel"],
@@ -88,7 +89,7 @@ const Projects = () => {
       </div>
 
       {/* Cards Grid */}
-      <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
         {projects.map((project, index) => (
           <motion.div
             key={index}
@@ -97,17 +98,23 @@ const Projects = () => {
             viewport={{ once: true }}
             whileHover={{ y: -6 }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
-            className="group relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 shadow-xl shadow-black/30 flex flex-col"
+            className="group relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 shadow-xl shadow-black/30 flex flex-col h-full"
           >
             {/* Top: Image or Gradient */}
             <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden shrink-0">
               {project.image ? (
                 <>
-                  <img
-                    src={project.image}
-                    alt={project.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:blur-[2px]"
-                  />
+                  <div className={`w-full h-full ${project.imageContain ? "bg-slate-950 flex items-center justify-center p-6" : ""}`}>
+                    <img
+                      src={project.image}
+                      alt={project.name}
+                      className={`transition-transform duration-700 group-hover:scale-105 group-hover:blur-[2px] ${
+                        project.imageContain
+                          ? "max-h-full max-w-full object-contain"
+                          : "w-full h-full object-cover"
+                      }`}
+                    />
+                  </div>
                   {/* Hover overlay — desktop */}
                   <div className="absolute inset-0 bg-slate-950/88 flex flex-col justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-5 text-center">
                     <p className="text-slate-300 text-sm leading-relaxed mb-5">
