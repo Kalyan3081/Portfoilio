@@ -39,10 +39,10 @@ const Intro = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-blue-900/10 to-transparent pointer-events-none"></div>
 
         {/* Main Content Container */}
-        <div className="w-full max-w-7xl px-4 sm:px-8 lg:px-12 z-10 flex flex-col-reverse lg:flex-row items-center justify-between gap-12 h-screen pt-20 lg:pt-0">
+        <div className="w-full max-w-7xl px-4 sm:px-8 lg:px-12 z-10 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-12 pt-24 pb-16 lg:pt-0 lg:h-screen lg:pb-0">
 
           {/* LEFT SIDE: Text Content */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 lg:w-1/2">
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 w-full lg:w-1/2">
 
             {/* Freelancer availability badge */}
             <motion.div
@@ -68,7 +68,7 @@ const Intro = () => {
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-5xl sm:text-7xl lg:text-8xl font-extrabold tracking-tighter text-white leading-[1.1] text-shadow-glow whitespace-nowrap"
+                className="text-4xl sm:text-7xl lg:text-8xl font-extrabold tracking-tighter text-white leading-[1.1] text-shadow-glow"
               >
                 Pawan <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">Kalyan</span>
               </motion.h1>
@@ -80,7 +80,7 @@ const Intro = () => {
             </div>
 
             {/* Social Icons */}
-            <div className="flex gap-6 sm:gap-8 pt-2">
+            <div className="flex gap-5 sm:gap-8 pt-1">
               {socialLinks.map((link, index) => (
                 <motion.a
                   key={index}
@@ -95,7 +95,7 @@ const Intro = () => {
               ))}
             </div>
 
-            <div className="flex flex-wrap gap-4 mt-6 sm:mt-8 justify-center lg:justify-start">
+            <div className="flex flex-wrap gap-4 mt-4 sm:mt-8 justify-center lg:justify-start">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -115,13 +115,12 @@ const Intro = () => {
             </div>
           </div>
 
-          {/* RIGHT SIDE: Image with "3 Left / 3 Right" Orbit */}
-          {/* RIGHT SIDE: Image with "Bracket" ( ) Layout */}
+          {/* RIGHT SIDE: Illustration — hidden on mobile to avoid layout gap */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            className="relative flex justify-center lg:justify-end lg:w-1/2"
+            className="relative hidden lg:flex justify-end lg:w-1/2"
           >
             <div className="relative w-[220px] sm:w-[450px] lg:w-[600px] flex items-center justify-center">
 
