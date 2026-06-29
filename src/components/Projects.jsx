@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaExternalLinkAlt, FaShieldAlt } from "react-icons/fa";
+import { FaExternalLinkAlt } from "react-icons/fa";
 import ballarikhara from "../assets/ballarikhara.png";
 import medvoro from "../assets/medvoro.png";
 
@@ -13,6 +13,7 @@ const projects = [
     image: ballarikhara,
     link: "https://ballarikhara.in/",
     tech: ["React", "Node.js", "MongoDB", "Express"],
+    features: ["Product catalog with same-day delivery", "Offers, rewards & loyalty system", "Admin dashboard with analytics"],
     status: "live",
   },
   {
@@ -23,6 +24,7 @@ const projects = [
     image: medvoro,
     link: "https://medvorohealth.com/",
     tech: ["Next.js", "Sanity CMS", "Brevo", "Tailwind CSS"],
+    features: ["Category-filtered articles with SEO", "Email newsletter via Brevo", "Trending posts & fully managed CMS"],
     status: "live",
   },
   {
@@ -30,9 +32,10 @@ const projects = [
     category: "Enterprise Security Management Platform",
     description:
       "Full-stack security platform for industrial sites. 3-role mobile app (guard, client, dept), visitor & vehicle management, QR patrol, SOS alerts, attendance & payroll, real-time Socket.IO sync. Live on Google Play Store.",
-    image: null,
+    image: "/logo.jpeg",
     link: "https://migsecure.in",
     tech: ["React Native", "Expo", "Node.js", "MongoDB", "Next.js", "Socket.IO"],
+    features: ["Visitor & vehicle management with approvals", "QR patrol + SOS emergency alerts", "Attendance, payroll & admin web panel"],
     status: "live",
   },
 ];
@@ -173,12 +176,24 @@ const Projects = () => {
                 )}
               </div>
 
+              {/* Features */}
+              {project.features && (
+                <ul className="flex flex-col gap-1">
+                  {project.features.map((f, i) => (
+                    <li key={i} className="flex items-start gap-2 text-slate-400 text-xs">
+                      <span className="text-blue-500 mt-0.5">›</span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              )}
+
               {/* Tech tags */}
-              <div className="flex flex-wrap gap-1.5 mt-auto">
+              <div className="flex flex-wrap gap-2 mt-auto pt-1">
                 {project.tech.map((t, i) => (
                   <span
                     key={i}
-                    className="px-2.5 py-0.5 rounded-md text-xs bg-slate-800 text-slate-300 border border-slate-700/60"
+                    className="px-3 py-1 rounded-md text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700/60"
                   >
                     {t}
                   </span>
