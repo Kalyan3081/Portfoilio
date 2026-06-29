@@ -32,14 +32,14 @@ const Intro = () => {
 
   return (
     <>
-      <div className="relative min-h-screen flex flex-col items-center justify-start lg:justify-center bg-slate-950 bg-grid-white overflow-hidden">
+      <div className="relative flex flex-col items-center justify-start lg:min-h-screen lg:justify-center bg-slate-950 bg-grid-white overflow-hidden">
 
         {/* Background Ambient Glow */}
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-slate-950 [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]"></div>
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-blue-900/10 to-transparent pointer-events-none"></div>
 
         {/* Main Content Container */}
-        <div className="w-full max-w-7xl px-4 sm:px-8 lg:px-12 z-10 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-12 pt-24 pb-16 lg:pt-0 lg:h-screen lg:pb-0">
+        <div className="w-full max-w-7xl px-4 sm:px-8 lg:px-12 z-10 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-12 pt-24 pb-10 lg:pt-0 lg:h-screen lg:pb-0">
 
           {/* LEFT SIDE: Text Content */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 w-full lg:w-1/2">

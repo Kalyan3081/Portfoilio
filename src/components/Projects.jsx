@@ -115,8 +115,8 @@ const Projects = () => {
                       }`}
                     />
                   </div>
-                  {/* Hover overlay — desktop */}
-                  <div className="absolute inset-0 bg-slate-950/88 flex flex-col justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-5 text-center">
+                  {/* Hover overlay — desktop only */}
+                  <div className="absolute inset-0 bg-slate-950/88 hidden lg:flex flex-col justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-5 text-center">
                     <p className="text-slate-300 text-sm leading-relaxed mb-5">
                       {project.description}
                     </p>
