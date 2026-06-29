@@ -36,7 +36,7 @@ function ContactMe() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-20">
+    <div id="contact" className="container mx-auto px-4 py-20">
       <div className="text-center mb-16">
         <motion.p
           initial={{ opacity: 0, y: -10 }}

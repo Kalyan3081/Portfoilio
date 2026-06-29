@@ -95,14 +95,24 @@ const Intro = () => {
               ))}
             </div>
 
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="mt-6 sm:mt-8 px-8 sm:px-10 py-3 sm:py-4 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-bold text-lg sm:text-xl shadow-xl shadow-blue-500/20 hover:shadow-blue-500/40 transition-all border border-blue-400/20"
-              onClick={() => setDrawerOpen(true)}
-            >
-              More About Me
-            </motion.button>
+            <div className="flex flex-wrap gap-4 mt-6 sm:mt-8 justify-center lg:justify-start">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 sm:px-10 py-3 sm:py-4 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-bold text-lg sm:text-xl shadow-xl shadow-blue-500/20 hover:shadow-blue-500/40 transition-all border border-blue-400/20"
+                onClick={() => setDrawerOpen(true)}
+              >
+                About Me
+              </motion.button>
+              <motion.a
+                href="#contact"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 sm:px-10 py-3 sm:py-4 rounded-full border border-slate-600 text-slate-200 font-bold text-lg sm:text-xl hover:border-blue-500 hover:text-blue-400 transition-all"
+              >
+                Hire Me
+              </motion.a>
+            </div>
           </div>
 
           {/* RIGHT SIDE: Image with "3 Left / 3 Right" Orbit */}
