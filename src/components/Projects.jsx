@@ -56,7 +56,7 @@ const StatusBadge = ({ status }) =>
 
 const Projects = () => {
   return (
-    <div className="container mx-auto py-20 px-4" id="projects">
+    <div className="container mx-auto py-10 px-4" id="projects">
 
       {/* Section Header */}
       <div className="text-center mb-16">
@@ -108,11 +108,10 @@ const Projects = () => {
                     <img
                       src={project.image}
                       alt={project.name}
-                      className={`transition-transform duration-700 group-hover:scale-105 group-hover:blur-[2px] ${
-                        project.imageContain
+                      className={`transition-transform duration-700 group-hover:scale-105 group-hover:blur-[2px] ${project.imageContain
                           ? "max-h-full max-w-full object-contain"
                           : "w-full h-full object-cover"
-                      }`}
+                        }`}
                     />
                   </div>
                   {/* Hover overlay — desktop only */}
